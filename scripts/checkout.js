@@ -1,7 +1,7 @@
-import { cart } from "../data/cart";
-import { products } from "../data/products";
+import { cart } from "../data/cart.js";
+import { products } from "../data/products.js";
 
-let cartSummaryHTML = "";
+let cartSummaryHTML = ``;
 
 cart.forEach((cartItem) => {
   const productId = cartItem.productId;
