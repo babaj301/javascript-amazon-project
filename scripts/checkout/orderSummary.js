@@ -7,12 +7,7 @@ import {
   deliveryOptions,
   getDeliveryOption,
 } from "../../data/deliveryOptions.js";
-
-const today = dayjs();
-const deliverydate = today.add(7, "days");
-console.log(deliverydate.format("dddd, MMMM, D"));
-
-hello();
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary() {
   // body
@@ -120,6 +115,8 @@ export function renderOrderSummary() {
       );
 
       container.remove();
+
+      renderPaymentSummary();
     });
   });
 
@@ -129,6 +126,7 @@ export function renderOrderSummary() {
       updateDeliveryOption(productId, deliveryOptionId);
 
       renderOrderSummary();
+      renderPaymentSummary();
     });
   });
 }
